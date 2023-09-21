@@ -28,4 +28,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    if ('speechSynthesis' in window) {
+        const synth = window.speechSynthesis;
+
+        speakButton.addEventListener('click', () => {
+            const text = element.textContent;
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            synth.speak(utterance);
+        });
+    } 
+    else 
+    {
+        console.log("Speech Synthesis API is not supported in this browser.");
+    }
+
 });
