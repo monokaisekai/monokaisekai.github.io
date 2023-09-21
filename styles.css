@@ -11,6 +11,14 @@ h1 {
     text-align: center;
 }
 
+button {
+    margin-top: 20px;
+}
+
 .container {
     margin-top: 20px;
+}
+
+.card {
+    padding: 10px;
 }
