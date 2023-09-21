@@ -23,13 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (input.value.length > 0) {
             form.style.display = "none";
-            element.innerHTML = `안녕하세요 ${input.value}`;
+            element.innerHTML = `안녕 ${input.value}`;
             if ('speechSynthesis' in window) {
                 const synth = window.speechSynthesis;
         
                 // Create a SpeechSynthesisUtterance for the input value
-                const inputUtterance = new SpeechSynthesisUtterance(`an yong ha se yo ${input.value}`);
-                inputUtterance.lang = 'fil-PH';
+                const inputUtterance = new SpeechSynthesisUtterance(`an yong ${input.value}`);
                 inputUtterance.rate = 0.5;
                 synth.speak(inputUtterance)
             } 
