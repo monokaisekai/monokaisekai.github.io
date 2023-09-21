@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang=""en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hello!</title>
         <style>
-            h2 {
-                color: blue;
-                text-align: center;
+            body {
+                display: flex;
+                justify-content: center; /* Center horizontally */
+                align-items: center; /* Center vertically */
+                height: 100vh; /* 100% of viewport height */
+                background-color: black;
+            }
+            h1 {
+                padding: 20px;
+                font-size: 25vh;
+                font-family: sans-serif;
+                color: white;
             }
         </style>
     </head>
     <body>
-        <h2>Hello!</h2>
+        <h1>Hello!</h1>
+        <script>
+            // Get the element and body
+            const element = document.querySelector("h1");
+            const body = document.querySelector("body");
+
+            // Add a mouseover event listener
+            element.addEventListener("mouseover", function() {
+                // Change the text color on hover
+                element.style.color = "black";
+                body.style.backgroundColor = "white";
+            });
+
+            element.addEventListener("mouseout", function() {
+                // Change the text color on hover
+                element.style.color = "white";
+                body.style.backgroundColor = "black";
+            });
+        </script>
     </body>
 </html>
