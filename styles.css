@@ -7,6 +7,11 @@ body {
     margin-top: 20px;
 }
 
+img {
+    width: 45vw;
+    margin-bottom: 5px;
+}
+
 h1 {
     text-align: center;
 }
@@ -17,8 +22,12 @@ button {
 
 .container {
     margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 .card {
     padding: 10px;
+    width: 50vw;
 }

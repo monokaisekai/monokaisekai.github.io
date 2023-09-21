@@ -3,9 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add a click event listener to the button
     button.addEventListener('click', function() {
-        const urlToOpen = 'https://github.com/monokaisekai/hello';
-        
-        // Open the URL in a new tab
-        window.open(urlToOpen, '_blank');
+        const body = document.querySelector('body');
+        if (button.value === 'dark') {
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+            button.innerHTML = 'Light Mode';
+            button.value = 'light';
+        }
+        else {
+            body.style.backgroundColor = 'white';
+            body.style.color = 'black';
+            button.innerHTML = 'Dark Mode';
+            button.value = 'dark';
+        }
     });
 });
