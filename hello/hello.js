@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the element and body
     const element = document.querySelector("h1");
     const body = document.querySelector("body");
+    const form = document.querySelector("form");
 
     // Add a mouseover event listener
     element.addEventListener("mouseover", function() {
@@ -15,4 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.color = "white";
         body.style.backgroundColor = "black";
     });
+
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+        const input = document.querySelector("input");
+        
+        if (input.value.length > 0) {
+            form.style.display = "none";
+            element.innerHTML = `안녕하세요 ${input.value}`;
+            greeting.id = "kor"
+        }
+    });
+
 });
