@@ -24,23 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (input.value.length > 0) {
             form.style.display = "none";
             element.innerHTML = `안녕하세요 ${input.value}`;
-            greeting.id = "kor"
+            if ('speechSynthesis' in window) {
+                const synth = window.speechSynthesis;
+        
+                // Create a SpeechSynthesisUtterance for the input value
+                const inputUtterance = new SpeechSynthesisUtterance(`an yong ha se yo ${input.value}`);
+                inputUtterance.lang = 'fil-PH';
+                inputUtterance.rate = 0.5;
+                synth.speak(inputUtterance)
+            } 
+            else 
+            {
+                console.log("Speech Synthesis API is not supported in this browser.");
+            }
         }
     });
-
-    if ('speechSynthesis' in window) {
-        const synth = window.speechSynthesis;
-
-        speakButton.addEventListener('click', () => {
-            const text = element.textContent;
-            const utterance = new SpeechSynthesisUtterance(text);
-
-            synth.speak(utterance);
-        });
-    } 
-    else 
-    {
-        console.log("Speech Synthesis API is not supported in this browser.");
-    }
 
 });
