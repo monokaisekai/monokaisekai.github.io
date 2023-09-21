@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
                 // Create a SpeechSynthesisUtterance for the input value
                 const inputUtterance = new SpeechSynthesisUtterance(`an yong ${input.value}`);
-                const koreanVoice = synth.getVoices().find(voice => voice.lang === 'ko-KR');
                 inputUtterance.rate = 0.5;
                 synth.speak(inputUtterance)
             } 
